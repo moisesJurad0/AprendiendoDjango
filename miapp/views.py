@@ -5,6 +5,10 @@ from django.shortcuts import render, HttpResponse
 # MVT = Modelo Vista Template
 
 
+def index(request):
+    return HttpResponse("""<h1>Inicio</h1>""")
+
+
 def hola_mundo(request):
     return HttpResponse(
         "<h1>"
@@ -13,4 +17,4 @@ def hola_mundo(request):
         "<h3>"
         "saludos."
         "</h3>"
-        )
+    )
