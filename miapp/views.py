@@ -6,4 +6,11 @@ from django.shortcuts import render, HttpResponse
 
 
 def hola_mundo(request):
-    return HttpResponse("ESA GENTE")
+    return HttpResponse(
+        "<h1>"
+        "ESA GENTE"
+        "</h1>"
+        "<h3>"
+        "saludos."
+        "</h3>"
+        )
