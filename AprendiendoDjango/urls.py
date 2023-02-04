@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from miapp import views
+#from miapp import views
+import miapp.views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("hola-mundo/", views.hola_mundo, name="holaMundo"),
-    path("", views.index, name="index"),
-    path("index/", views.index, name="index"),
-    path("inicio/", views.index, name="inicio"),
-    path("home/", views.index, name="home"),
+    path("hola-mundo/", miapp.views.hola_mundo, name="holaMundo"),
+    path("", miapp.views.index, name="index"),
+    path("index/", miapp.views.index, name="index"),
+    path("inicio/", miapp.views.index, name="inicio"),
+    path("home/", miapp.views.index, name="home"),
 ]
