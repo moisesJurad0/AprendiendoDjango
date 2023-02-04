@@ -21,15 +21,25 @@ import miapp.views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("hola-mundo/", miapp.views.hola_mundo, name="holaMundo"),
-    path("pagina-pruebas/", miapp.views.hola_mundo, name="paginaPruebas"),
-    path("pagina-prueba/", miapp.views.hola_mundo, name="paginaPrueba"),
+
     path("", miapp.views.index, name="index"),
     path("index/", miapp.views.index, name="index"),
     path("inicio/", miapp.views.index, name="inicio"),
     path("home/", miapp.views.index, name="home"),
+
+    path("hola-mundo/", miapp.views.hola_mundo, name="holaMundo"),
+
     path("contacto/", miapp.views.contacto, name="contacto"),
     path("contacto/<str:nombre>", miapp.views.contacto, name="contacto"),
     path("contacto/<str:nombre>/<str:apellidos>", miapp.views.contacto,
          name="contacto"),
+
+    path("pagina-prueba/", miapp.views.pagina, name="paginaPrueba"),
+    path("pagina-prueba/<int:redirigir>", miapp.views.pagina,
+         name="paginaPrueba"),
+    path("pagina/", miapp.views.pagina, name="paginaPrueba"),
+    path("pagina/<int:redirigir>", miapp.views.pagina,
+         name="paginaPrueba"),
+
+
 ]

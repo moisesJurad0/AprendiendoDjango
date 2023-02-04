@@ -1,6 +1,6 @@
 """Urls module."""
 
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 # MVC = Modelo Vista Controlador
@@ -17,10 +17,13 @@ layout_comun = """
         <a href="/hola-mundo">Hola Mundo</a>
     </li>
     <li>
-        <a href="/pagina-pruebas">Página de pruebas</a>
+        <a href="/contacto">Contacto</a>
     </li>
     <li>
-        <a href="/contacto">Contacto</a>
+        <a href="/pagina-prueba">Página de pruebas</a>
+    </li>
+    <li>
+        <a href="/pagina">Pagina</a>
     </li>
 </ul>
 <hr/>
@@ -56,5 +59,15 @@ def hola_mundo(request):
 def contacto(request, nombre='', apellidos=''):
     """sumary_line."""
     html = f"<h1>Contacto {nombre} {apellidos}</h1>"
+
+    return HttpResponse(('', layout_comun, html))
+
+
+def pagina(request, redirigir=0):
+    """sumary_line."""
+    html = """<h1>PAGINA</h1>"""
+
+    if redirigir == 1:
+        return redirect("/")
 
     return HttpResponse(('', layout_comun, html))
