@@ -19,6 +19,9 @@ layout_comun = """
     <li>
         <a href="/pagina-pruebas">Página de pruebas</a>
     </li>
+    <li>
+        <a href="/contacto">Contacto</a>
+    </li>
 </ul>
 <hr/>
 """
@@ -46,5 +49,12 @@ def hola_mundo(request):
     """sumary_line."""
     html = """<h1>Hello World ;D</h1>
             <h3>saludos.</h3>"""
+
+    return HttpResponse(('', layout_comun, html))
+
+
+def contacto(request, nombre='', apellidos=''):
+    """sumary_line."""
+    html = f"<h1>Contacto {nombre} {apellidos}</h1>"
 
     return HttpResponse(('', layout_comun, html))
