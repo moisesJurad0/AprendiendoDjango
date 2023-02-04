@@ -7,7 +7,7 @@ from django.shortcuts import render, HttpResponse
 # MVT = Modelo Vista Template
 
 layout_comun = """
-<h1>Sitio web con Django | moises jurado</h1>
+<h1>Sitio web con Django | Moisés Jurado</h1>
 <hr/>
 <ul>
     <li>
