@@ -1,4 +1,4 @@
-"""AprendiendoDjango URL Configuration
+"""AprendiendoDjango URL Configuration.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -13,14 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
-#from miapp import views
+# from miapp import views
 import miapp.views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("hola-mundo/", miapp.views.hola_mundo, name="holaMundo"),
+    path("pagina-pruebas/", miapp.views.hola_mundo, name="paginaPruebas"),
+    path("pagina-prueba/", miapp.views.hola_mundo, name="paginaPrueba"),
     path("", miapp.views.index, name="index"),
     path("index/", miapp.views.index, name="index"),
     path("inicio/", miapp.views.index, name="inicio"),
